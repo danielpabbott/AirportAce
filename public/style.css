@@ -1,0 +1,86 @@
+body {
+  background-color: hsl(128, 48%, 78%);
+  display: flex;
+  flex-wrap: wrap;
+}
+header {
+  height: 12%;
+  width: 95%;
+  margin: auto;
+  background-color: hsla(127, 57%, 97%, 1);
+  color: hsla(127, 36%, 50%, 1);
+  display: flex;
+  justify-content: space-around;;
+  align-content: center;
+}
+/*.plane {
+  height: 10%;
+  margin: 5px;
+}*/
+h1 {
+  font-family: Lobster;
+}
+div {
+  margin: auto;
+}
+
+.container {
+  height: 74%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.hero {
+  height: 350px;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+.select {
+  height: 3em;
+  background-color: hsl(127, 57%, 97%);
+}
+.top {
+  width: 50%;
+}
+.airport {
+  width: 100%;
+  margin-bottom: 5%;
+}
+.submit {
+  height: 4em;
+  width: 50%;
+  color: hsla(127, 57%, 97%, 1);
+  background-color: hsl(127, 36%, 50%);
+  border-radius: 10px;
+  margin-bottom: 5%;
+}
+footer {
+  height: 12%;
+  width: 100%;
+  margin: auto;
+  background-color: hsla(127, 57%, 97%, 1);
+  color: hsla(127, 36%, 50%, 1);
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.drive {
+  width: 100px;
+  height: 3em;
+  border-radius: 10px;
+}
+.lyft {
+  background-color: hsla(315, 65%, 50%, 1);
+  color: white;
+  float: left;
+}
+.uber {
+  background-color: black;
+  color: hsla(189, 65%, 48%, 1);
+  float: right;
+}

@@ -1,0 +1,9 @@
+{
+  "firebase": "dpa-q1-project",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
