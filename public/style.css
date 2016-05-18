@@ -1,4 +1,6 @@
-body {
+/*Palette UID: 12R0u0k7sKC12ZA3NTLbPzvgRs2*/
+
+/*body {
   background-color: hsl(128, 48%, 78%);
   display: flex;
   flex-wrap: wrap;
@@ -12,12 +14,12 @@ header {
   display: flex;
   justify-content: space-around;;
   align-content: center;
-}
+}*/
 /*.plane {
   height: 10%;
   margin: 5px;
 }*/
-h1 {
+/*h1 {
   font-family: Lobster;
 }
 div {
@@ -40,15 +42,15 @@ div {
   flex-wrap: wrap;
 }
 .select {
-  height: 3em;
+  height: 2em;
   background-color: hsl(127, 57%, 97%);
+  margin-bottom: 5%;
 }
 .top {
   width: 50%;
 }
-.airport {
+.full {
   width: 100%;
-  margin-bottom: 5%;
 }
 .submit {
   height: 4em;
@@ -64,7 +66,6 @@ footer {
   margin: auto;
   background-color: hsla(127, 57%, 97%, 1);
   color: hsla(127, 36%, 50%, 1);
-  align-self: flex-end;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -83,4 +84,4 @@ footer {
   background-color: black;
   color: hsla(189, 65%, 48%, 1);
   float: right;
-}
+}*/
