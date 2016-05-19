@@ -1,6 +1,8 @@
 /*Palette UID: 12R0u0k7sKC12ZA3NTLbPzvgRs2*/
-
-/*body {
+.flame {
+  width: 7%;
+}
+body {
   background-color: hsl(128, 48%, 78%);
   display: flex;
   flex-wrap: wrap;
@@ -14,18 +16,22 @@ header {
   display: flex;
   justify-content: space-around;;
   align-content: center;
-}*/
-/*.plane {
+}
+.plane {
   height: 10%;
   margin: 5px;
-}*/
-/*h1 {
+}
+h1 {
   font-family: Lobster;
 }
-div {
-  margin: auto;
+.chart div {
+  font: 10px sans-serif;
+  background-color: hsla(127, 36%, 50%, 1);
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
 }
-
 .container {
   height: 74%;
   width: 100%;
@@ -84,4 +90,4 @@ footer {
   background-color: black;
   color: hsla(189, 65%, 48%, 1);
   float: right;
-}*/
+}

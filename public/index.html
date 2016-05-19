@@ -2,53 +2,42 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Airport Ace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.2.1/math.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="moment.js"></script>
     <script src="app.js"></script>
   </head>
   <body>
     <header>
-      <!-- <img class="plane" src = "https://cdn2.iconfinder.com/data/icons/airport-set-2/512/36-512.png"> -->
       <h1>Airport Ace</h1>
-      <!-- <img class="plane" src = "https://cdn2.iconfinder.com/data/icons/airport-set-2/512/37-512.png"> -->
-      <!-- MENU -->
     </header>
-      <div class="container">
-        <form class="form">
-
-          <!-- <img class="hero" src="https://camo.githubusercontent.com/c7f5cf1f57ace8ec7ffe00b295077150a035b41f/68747470733a2f2f63646e312e69636f6e66696e6465722e636f6d2f646174612f69636f6e732f616972706f72742d7365742d312f3531322f382d3531322e706e67"> -->
-
-          <input type="date" name="date" class="select top date">
-
-          <select class="select top hourOfDay" name="hourOfDay">
-            <option selected disabled hidden>What hour will you start to drive? (0-23)</option>
-          </select>
-
-          <select class="select top window" name="window">
-            <option selected disabled hidden>Window (min)</option>
-            <option>15</option>
-            <option>30</option>
-            <option>60</option>
-          </select>
-
-          <select class="select top numHours" name="numHours">
-            <option selected disabled hidden>Range (hours)</option>
-            <option>2</option>
-            <option>4</option>
-            <option>6</option>
-          </select>
-
-          <select class="select full airport" name="airport">
-            <option selected disabled hidden>Airport</option>
-            <option>DEN</option>
-          </select>
-
-          <input type="submit" name="submit" value="SUBMIT" class="submit">
-
-        </form>
+    <h3></h3>
+    <div class="container-fluid">
+      <form class="form">
+        <img class="hero" src="https://camo.githubusercontent.com/c7f5cf1f57ace8ec7ffe00b295077150a035b41f/68747470733a2f2f63646e312e69636f6e66696e6465722e636f6d2f646174612f69636f6e732f616972706f72742d7365742d312f3531322f382d3531322e706e67">
+        <div class="chart"></div>
+        <input type="date" id="theDate">
+        <select class="select top hourOfDay" name="hourOfDay">
+          <option selected disabled hidden>When do you start?</option>
+        </select>
+        <select class="select top numHours" name="numHours">
+          <option selected disabled hidden>For how long?</option>
+          <option value='2'>2 hrs</option>
+          <option value='4'>4 hrs</option>
+          <option value='6'>6 hrs</option>
+        </select>
+        <input type="text" class="select full airport" name="airport" placeholder="Airport Code (ex: DEN)">
+        <input type="submit" name="submit" value="SUBMIT" class="submit">
+      </form>
     </div>
     <footer>
       <input type="button" name="lyft" value="Start Lyfting!" class="drive lyft" onclick="location.href='https://www.lyft.com/drivers/DANIEL9636'">
