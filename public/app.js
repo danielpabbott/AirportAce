@@ -9,20 +9,20 @@ $(document).ready(function () {
   var today = year + "-" + month + "-" + day;
   $("#theDate").attr("value", today);
 // populate hourOfDay select options
-  $('.hourOfDay').append('<option value='+00+'>12:00 am'+'</option>');
+  $('#hourOfDay').append('<option value='+00+'>12:00 am'+'</option>');
   for (let i=1; i<12; i++) {
-    $('.hourOfDay').append('<option value='+i+'>'+i+':00 am'+'</option>');
+    $('#hourOfDay').append('<option value='+i+'>'+i+':00 am'+'</option>');
   }
-  $('.hourOfDay').append('<option value='+12+'>12:00 pm'+'</option>');
+  $('#hourOfDay').append('<option value='+12+' selected>12:00 pm'+'</option>');
   for (let i=1; i<12; i++) {
-    $('.hourOfDay').append('<option value='+i+'>'+i+':00 pm'+'</option>');
+    $('#hourOfDay').append('<option value='+(i+12)+'>'+i+':00 pm'+'</option>');
   }
   $('form').on('submit', function(event) {
     event.preventDefault();
 // request selected airport's arrivals over specified time period
     var date = today.replace(/-/g,'/')
-    var request = 'https://galvanize-cors-proxy.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/airport/status/'+ $('.airport').val()+"/arr/"+date+"/"+$('.hourOfDay').val()+"?appId=dfc59556&appKey=5c6c8072307e694391326f3ed034fbe6&utc=false&numHours="+$('.numHours').val();
-    // console.log(request);
+    var request = 'https://galvanize-cors-proxy.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/airport/status/'+ $('#airports').val()+"/arr/"+date+"/"+$('#hourOfDay').val()+"?appId=dfc59556&appKey=5c6c8072307e694391326f3ed034fbe6&utc=false&numHours="+$('#numHours').val();
+    console.log(request);
     $.get(request, function(data) {
 // put data into specified windows and print busiest times plus graph of specified time period
   //arrivals data into an array
@@ -71,12 +71,12 @@ $(document).ready(function () {
         }
       }
   // display graph of number of flights for each bin
-      d3.select(".chart")
-        .selectAll("div")
-          .data(flights)
-        .enter().append("div")
-          .style("width", function(d) {return d.value * 10 + "px"; })
-          .text(function(d) { return d.name; })
+      // d3.select(".chart")
+      //   .selectAll("div")
+      //     .data(flights)
+      //   .enter().append("div")
+      //     .style("width", function(d) {return d.value * 10 + "px"; })
+      //     .text(function(d) { return d.name; })
   // sort bins and display three highest values
       var topThree=flights.sort(function(a,b) {
         if (a.value<b.value) {
@@ -100,12 +100,12 @@ $(document).ready(function () {
       }
       flame = '<img class=flame src="http://www.clipartbest.com/cliparts/yTo/M4r/yToM4rELc.png">'
       if (devs[0] >= 2 && devs[1] >=2 && devs[2] >=2) {
-        $("h3").html('Top Three Times to Drive: '+topThree[0].name+flame+', '+topThree[1].name+flame+', '+topThree[2].name+flame);
+        $("h3").html('<Top Three Times to Get A Rider<br>'+topThree[0].name+flame+', '+topThree[1].name+flame+', '+topThree[2].name+flame);
       } else if (devs[0] >= 2 && devs[1] >=2) {
-        $("h3").html('Top Three Times to Drive: '+topThree[0].name+flame+', '+topThree[1].name+flame+', '+topThree[2].name);
+        $("h3").html('Top Three Times to Get A Rider <br>'+topThree[0].name+flame+', '+topThree[1].name+flame+', '+topThree[2].name);
       } else if (devs[0] >= 2) {
-        $("h3").html('Top Three Times to Drive: '+topThree[0].name+flame+', '+topThree[1].name+', '+topThree[2].name);
-      } else {$("h3").text('Top Three Times to Drive: '+topThree[0].name+', '+topThree[1].name+', '+topThree[2].name)}
+        $("h3").html('Top Three Times to Get A Rider <br>'+topThree[0].name+flame+', '+topThree[1].name+', '+topThree[2].name);
+      } else {$("h3").html('Top Three Times to Get A Rider <br>'+topThree[0].name+', '+topThree[1].name+', '+topThree[2].name)}
       console.log(devs);
     })
   })
