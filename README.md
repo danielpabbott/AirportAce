@@ -1,3 +1,5 @@
 Airport Ace sorts and organizes arrivals data at every major airport in the world to inform ride share drivers of the best times throughout the day to find a rider at their preferred location.
 
-Built with jQuery, flightstats.com API, and Bootstrap
+Simply enter the date, time you'd like to start driving, how long you're planning to drive, and your local airport code and Airport Ace will return the busiest three times during that period. The flame icon next to a time indicates it is at least two standard deviations busier than the average time during that period.
+
+Built with jQuery, flightstats.com API, Math.js, Moment.js, and Bootstrap
