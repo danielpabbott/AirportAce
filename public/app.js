@@ -22,7 +22,12 @@ $(document).ready(function () {
     event.preventDefault();
 // request selected airport's arrivals over specified time period
     var date = today.replace(/-/g,'/')
-    var request = 'https://galvanize-cors-proxy.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/airport/status/'+ $('#airports').val()+"/arr/"+date+"/"+$('#hourOfDay').val()+"?appId=dfc59556&appKey=5c6c8072307e694391326f3ed034fbe6&utc=false&numHours="+$('#numHours').val();
+    var proxyAndApi = 'https://galvanize-cors-proxy.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/airport/status/';
+    var airport = $('#airports').val()+"/arr/";
+    var startTime = "/"+$('#hourOfDay').val();
+    var idAndKey = "?appId=dfc59556&appKey=5c6c8072307e694391326f3ed034fbe6&utc=false&numHours=";
+    var driveTime = $('#numHours').val();
+    var request = proxyAndApi+airport+date+startTime+idAndKey+driveTime;
     console.log(request);
     $.get(request, function(data) {
 // put data into specified windows and print busiest times plus graph of specified time period
