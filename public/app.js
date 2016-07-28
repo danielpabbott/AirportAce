@@ -9,14 +9,14 @@ $(document).ready(function () {
   var today = year + "-" + month + "-" + day;
   $("#theDate").attr("value", today);
 // populate hourOfDay select options
-  // $('#hourOfDay').append('<option value='+00+'>12:00 am'+'</option>');
-  // for (let i=1; i<12; i++) {
-  //   $('#hourOfDay').append('<option value='+i+'>'+i+':00 am'+'</option>');
-  // }
-  // $('#hourOfDay').append('<option value='+12+' selected>12:00 pm'+'</option>');
-  // for (let i=1; i<12; i++) {
-  //   $('#hourOfDay').append('<option value='+(i+12)+'>'+i+':00 pm'+'</option>');
-  // }
+  $('#hourOfDay').append('<option value='+00+'>12:00 am'+'</option>');
+  for (let i=1; i<12; i++) {
+    $('#hourOfDay').append('<option value='+i+'>'+i+':00 am'+'</option>');
+  }
+  $('#hourOfDay').append('<option value='+12+' selected>12:00 pm'+'</option>');
+  for (let i=1; i<12; i++) {
+    $('#hourOfDay').append('<option value='+(i+12)+'>'+i+':00 pm'+'</option>');
+  }
 
   $('form').on('submit', function(event) {
     event.preventDefault();
