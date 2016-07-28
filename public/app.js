@@ -9,14 +9,14 @@ $(document).ready(function () {
   var today = year + "-" + month + "-" + day;
   $("#theDate").attr("value", today);
 // populate hourOfDay select options
-  // $('#hourOfDay').append('<option value='+00+'>12:00 am'+'</option>');
-  // for (let i=1; i<12; i++) {
-  //   $('#hourOfDay').append('<option value='+i+'>'+i+':00 am'+'</option>');
-  // }
-  // $('#hourOfDay').append('<option value='+12+' selected>12:00 pm'+'</option>');
-  // for (let i=1; i<12; i++) {
-  //   $('#hourOfDay').append('<option value='+(i+12)+'>'+i+':00 pm'+'</option>');
-  // }
+  $('#hourOfDay').append('<option value='+00+'>12:00 am'+'</option>');
+  for (let i=1; i<12; i++) {
+    $('#hourOfDay').append('<option value='+i+'>'+i+':00 am'+'</option>');
+  }
+  $('#hourOfDay').append('<option value='+12+' selected>12:00 pm'+'</option>');
+  for (let i=1; i<12; i++) {
+    $('#hourOfDay').append('<option value='+(i+12)+'>'+i+':00 pm'+'</option>');
+  }
 
   $('form').on('submit', function(event) {
     event.preventDefault();
@@ -71,13 +71,6 @@ $(document).ready(function () {
           counter = 1;
         }
       }
-  // display graph of number of flights for each bin
-      // d3.select(".chart")
-      //   .selectAll("div")
-      //     .data(flights)
-      //   .enter().append("div")
-      //     .style("width", function(d) {return d.value * 10 + "px"; })
-      //     .text(function(d) { return d.name; })
   // sort bins and display three highest values
       var topThree=flights.sort(function(a,b) {
         if (a.value<b.value) {
